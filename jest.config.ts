@@ -4,7 +4,9 @@ export default {
   ],
 
   collectCoverage: true,
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/main/**', '!<rootDir>/src/**/*-protocols.ts', '!**/protocols/**'],
+  collectCoverageFrom: [
+    '<rootDir/src/**/*.ts>'
+  ],
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
