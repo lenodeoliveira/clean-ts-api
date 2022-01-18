@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1642530180683" clover="3.2.0">
-  <project timestamp="1642530180683" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1642538094331" clover="3.2.0">
+  <project timestamp="1642538094331" name="All files">
+    <metrics statements="41" coveredstatements="35" conditionals="3" coveredconditionals="3" methods="8" coveredmethods="8" elements="52" coveredelements="46" complexity="0" loc="41" ncloc="41" packages="4" files="8" classes="8"/>
+    <package name="controllers.signup">
+      <metrics statements="23" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="signup-protocols.ts" path="/Users/lenodeoliveira/Documents/study/clean-ts-api/src/presentation/controllers/signup/signup-protocols.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="signup.ts" path="/Users/lenodeoliveira/Documents/study/clean-ts-api/src/presentation/controllers/signup/signup.ts">
+        <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="15" count="11" type="stmt"/>
+        <line num="16" count="11" type="stmt"/>
+        <line num="17" count="11" type="stmt"/>
+        <line num="18" count="38" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="25" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="30" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="errors">
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/lenodeoliveira/Documents/study/clean-ts-api/src/presentation/errors/index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="invalid-param-error.ts" path="/Users/lenodeoliveira/Documents/study/clean-ts-api/src/presentation/errors/invalid-param-error.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+      </file>
+      <file name="missing-param-error.ts" path="/Users/lenodeoliveira/Documents/study/clean-ts-api/src/presentation/errors/missing-param-error.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="8" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+      </file>
+      <file name="server-error.ts" path="/Users/lenodeoliveira/Documents/study/clean-ts-api/src/presentation/errors/server-error.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="helpers">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="http-helper.ts" path="/Users/lenodeoliveira/Documents/study/clean-ts-api/src/presentation/helpers/http-helper.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="protocols">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/Users/lenodeoliveira/Documents/study/clean-ts-api/src/presentation/protocols/index.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
