@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "sucrase-node src/main/server.ts",
-    "test": "jest --silent --noStackTrace --runInBand",
+    "test": "jest --silent --noStackTrace --runInBand  --no-cache",
     "test:staged": "npm test -- --passWithNoTests",
     "test:verbose": "jest --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
@@ -22,6 +22,7 @@
     "@types/jest": "^27.4.0",
     "@types/mongodb": "^4.0.7",
     "@types/node": "^17.0.8",
+    "@types/supertest": "^2.0.11",
     "@types/validator": "^13.7.1",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "eslint": "^7.32.0",
@@ -34,6 +35,7 @@
     "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
     "sucrase": "^3.20.3",
+    "supertest": "^6.2.2",
     "ts-jest": "^27.1.3",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
