@@ -1,0 +1,20 @@
+version: 2.1
+
+orbs: 
+  coveralls: coveralls/coveralls@1.0.6
+jobs:
+  build:
+    docker:
+      - image: 'circleci/node:14.17.6'
+    steps:
+      - checkout
+      - run:
+          name: install the dependencies
+          command: npm install
+      - run:
+          name: check code style
+          command: npx eslint 'src/**'
+      - run:
+          name: tests and generates coverage report
+          command: npm run test:coveralls
+      - coveralls/upload
