@@ -12,9 +12,6 @@ jobs:
           name: install the dependencies
           command: npm install
       - run:
-          name: check code style
-          command: npx eslint 'src/**'
-      - run:
           name: tests and generates coverage report
           command: npm run test:coveralls
       - coveralls/upload
