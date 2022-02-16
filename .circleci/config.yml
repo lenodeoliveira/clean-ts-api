@@ -18,3 +18,4 @@ jobs:
           name: tests and generates coverage report
           command: npm run test:coveralls
       - coveralls/upload
+          verbose: true
