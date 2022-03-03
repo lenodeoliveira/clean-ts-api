@@ -1,37 +1,21 @@
 version: 2.1
-orbs:
-  node: circleci/node@1.1.6
-  heroku: circleci/heroku@0.0.10
+
+orbs: 
   coveralls: coveralls/coveralls@1.0.6
-  
-workflows:
-  heroku_deploy:
-    jobs:
-      - build
-      - heroku/deploy-via-git:  
-          requires:
-            - build
-          filters:
-            branches:
-              only: main
 jobs:
   build:
     docker:
-      - image: circleci/node:10.16.0
+      - image: 'circleci/node:14.17.6'
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install dependencies
-          command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
       - run:
           name: install the dependencies
           command: npm install
       - run:
           name: check code style
           command: npx eslint 'src/**'
+      - run:
+          name: tests and generates coverage report
+          command: npm run test:coveralls
+      - coveralls/upload:
+          verbose: true
