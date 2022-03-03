@@ -18,9 +18,16 @@ jobs:
       - image: 'circleci/node:14.17.6'
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install the dependencies
           command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - "./node_modules"
+          key: 
       - run:
           name: check code style
           command: npx eslint 'src/**'
