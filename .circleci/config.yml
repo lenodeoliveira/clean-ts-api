@@ -6,7 +6,7 @@ workflows:
   heroku_deploy:
     jobs:
       - build
-      - heroku-deploy:  
+      - heroku/deploy-via-git:  
           requires:
             - build
           filters:
