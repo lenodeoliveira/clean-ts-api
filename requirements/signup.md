@@ -22,5 +22,5 @@
 1. :x: Retorna erro 403 se o email fornecido já estiver em uso
 1. ✅ Retorna erro 500 se der erro ao tentar gerar uma senha criptografada
 1. ✅ Retorna erro 500 se der erro ao tentar criar a conta do usuário
-1. ✅ Retorna erro 500 se der erro ao tentar gerar o token de acesso
-1. ✅ Retorna erro 500 se der erro ao tentar atualizar o usuário com o token de acesso gerado
+1. :x: Retorna erro 500 se der erro ao tentar gerar o token de acesso
+1. :x: Retorna erro 500 se der erro ao tentar atualizar o usuário com o token de acesso gerado
