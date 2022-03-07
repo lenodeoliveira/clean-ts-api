@@ -4,7 +4,7 @@
 1. ✅ Recebe uma requisição do tipo POST na rota /api/login
 2. ✅ Valida dados obrigatórios email e password
 3. ✅ Valida que o campo email é um e-mail válido
-4. ✅ Busca o usuário com o email e senha fornecidos
+4. :x: Busca o usuário com o email e senha fornecidos
 5. ✅ Gera um token de acesso a partir do ID do usuário
 6. ✅ Atualiza os dados do usuário com o token de acesso gerado
 7. ✅ Retorna 200 com o token de acesso e o nome do usuário
