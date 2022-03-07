@@ -1,7 +1,7 @@
 # Responder enquete
 
 > ## Caso de sucesso
-1. :x: Recebe uma requisição do tipo PUT na rota /api/surveys/{survey_id}/results
+1. :x: Recebe uma requisição do tipo **PUT** na rota **/api/surveys/{survey_id}/results**
 2. :x: Valida se a requisição foi feita por um usuário
 3. :x: Valida o parâmetro survey_id
 4. :x: Valida se o campo answer é uma resposta válida

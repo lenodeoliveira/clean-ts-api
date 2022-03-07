@@ -1,7 +1,7 @@
 # Criar enquete
 
 > ## Caso de sucesso
-1. :x: Recebe uma requisição do tipo POST na rota /api/surveys
+1. :x: Recebe uma requisição do tipo **POST** na rota **/api/surveys**
 2. :x: Valida se a requisição foi feita por um admin
 3. :x: Valida dados obrigatórios question e answers
 4. :x: Cria uma enquete com os dados fornecidos
