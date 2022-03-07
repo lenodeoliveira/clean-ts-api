@@ -12,11 +12,11 @@ O objetivo desse treinamento é mostrar como criar uma API com uma arquitetura b
 > ## APIs previstas para esse treinamento:
 
 1. [Cadastro](./requirements/signup.md)
-1. [Login](./requirements/login.md)
-1. [Criar enquete](./requirements/add-survey.md)
-1. [Listar enquetes](./requirements/surveys.md)
-1. [Responder enquetes](./requirements/answer-survey.md)
-1. [Resultado da enquete](./requirements/survey-result.md)
+2. [Login](./requirements/login.md)
+3. [Criar enquete](./requirements/add-survey.md)
+4. [Listar enquetes](./requirements/surveys.md)
+5. [Responder enquetes](./requirements/answer-survey.md)
+6. [Resultado da enquete](./requirements/survey-result.md)
 
 > ## Princípios aplicados:
 * Single Responsability Principle (SRP)
