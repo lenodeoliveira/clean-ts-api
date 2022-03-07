@@ -1,4 +1,4 @@
-# ** Responder enquete
+# Responder enquete
 
 > ## Caso de sucesso
 1. :x: Recebe uma requisição do tipo PUT na rota /api/surveys/{survey_id}/results

@@ -1,4 +1,4 @@
-# ** Cadastro
+# Cadastro
 
 > ## Caso de sucesso
 

@@ -1,4 +1,4 @@
-# ** Listar enquetes
+# Listar enquetes
 
 > ## Caso de sucesso
 1. :x: Recebe uma requisição do tipo GET na rota /api/surveys

@@ -1,4 +1,4 @@
-# **Login
+# Login
 
 > ## Caso de sucesso
 1. ✅ Recebe uma requisição do tipo POST na rota /api/login

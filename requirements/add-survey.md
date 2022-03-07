@@ -1,4 +1,4 @@
-# ** Criar enquete
+# Criar enquete
 
 > ## Caso de sucesso
 1. :x: Recebe uma requisição do tipo POST na rota /api/surveys
