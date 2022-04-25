@@ -79,6 +79,7 @@ describe('DbAddAccount UseCase', () => {
     const promise = sut.add(makeFakeAccountData())
     await expect(promise).rejects.toThrow()
   })
+
   test('Should call AddAccountRepository with correct values', async () => {
     const { sut, addAccountRepositoryStub } = makeSut()
     const addSpy = jest.spyOn(addAccountRepositoryStub, 'add')
