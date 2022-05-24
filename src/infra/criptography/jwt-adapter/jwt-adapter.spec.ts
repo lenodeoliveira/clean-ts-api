@@ -57,12 +57,12 @@ describe('Jwt Adapter', () => {
 
     test('Should throw if verify throws', async () => {
       const sut = makeSut()
-      jest.spyOn(jwt, 'sign').mockImplementation(
+      jest.spyOn(jwt, 'verify').mockImplementation(
         () => {
           throw new Error()
         }
       )
-      const promise = sut.encrypt('any_id')
+      const promise = sut.decrypt('any_token')
       await expect(promise).rejects.toThrow()
     })
   })
