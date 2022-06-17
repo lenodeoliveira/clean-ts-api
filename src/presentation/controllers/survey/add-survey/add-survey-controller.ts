@@ -19,7 +19,6 @@ export class AddSurveyController implements Controller {
         answers,
         date: new Date()
       })
-
       return noContent()
     } catch (error: any) {
       return serverError(error)

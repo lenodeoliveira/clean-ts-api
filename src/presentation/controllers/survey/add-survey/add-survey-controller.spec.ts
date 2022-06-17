@@ -29,7 +29,7 @@ const makeValidationStub = (): Validation => {
 const makeAddSurveyStub = (): AddSurvey => {
   class AddSurveyStub implements AddSurvey {
     async add (data: AddSurveyModel): Promise<void> {
-      return await new Promise(resolve => resolve(null))
+      return await new Promise(resolve => resolve())
     }
   }
   return new AddSurveyStub()
@@ -56,7 +56,7 @@ describe('AddSurvey Controller', () => {
     MockDate.set(new Date())
   })
 
-  beforeAll(() => {
+  afterAll(() => {
     MockDate.reset()
   })
 
