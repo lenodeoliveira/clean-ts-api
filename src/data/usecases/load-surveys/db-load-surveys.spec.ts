@@ -58,6 +58,7 @@ describe('DbLoadSurveys', () => {
   afterAll(() => {
     MockDate.reset()
   })
+
   test('Should call LoadSurveysRepository', async () => {
     const { sut, loadSurveysRepositoryStub } = makeSut()
     const loadAllSpy = jest.spyOn(loadSurveysRepositoryStub, 'loadAll')
