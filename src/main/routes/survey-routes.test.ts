@@ -10,7 +10,7 @@ let accountCollection: Collection
 
 describe('Survey Routes', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL)
+    await MongoHelper.connect(process.env.MONGO_URL || 'mongodb://mongo:27017/clean-node-api')
   })
 
   afterAll(async () => {
@@ -42,40 +42,48 @@ describe('Survey Routes', () => {
         })
         .expect(403)
     })
+
+    test('Should return 204 on add survey with valid accessToken', async () => {
+      const { insertedId } = await accountCollection.insertOne({
+        name: 'Any_name',
+        email: 'any_mail@gmail.com',
+        password: '123',
+        role: 'admin'
+      })
+      const id = insertedId.toHexString()
+      const accessToken = sign({ id }, env.jwtSecret)
+      await accountCollection.updateOne({
+        _id: insertedId
+      }, {
+        $set: {
+          accessToken
+        }
+      })
+
+      await request(app)
+        .post('/api/surveys')
+        .set('x-access-token', accessToken)
+        .send({
+          question: 'Question',
+          answers: [
+            {
+              answer: 'Answer 1',
+              image: 'http://image-name.com'
+            },
+            {
+              answer: 'Answer 2'
+            }
+          ]
+        })
+        .expect(204)
+    })
   })
 
-  test('Should return 204 on add survey with valid accessToken', async () => {
-    const { insertedId } = await accountCollection.insertOne({
-      name: 'Any_name',
-      email: 'any_mail@gmail.com',
-      password: '123',
-      role: 'admin'
+  describe('GET /surveys', () => {
+    test('Should return 403 on loaf survey without acessToken', async () => {
+      await request(app)
+        .get('/api/surveys')
+        .expect(403)
     })
-    const id = insertedId.toHexString()
-    const accessToken = sign({ id }, env.jwtSecret)
-    await accountCollection.updateOne({
-      _id: insertedId
-    }, {
-      $set: {
-        accessToken
-      }
-    })
-
-    await request(app)
-      .post('/api/surveys')
-      .set('x-access-token', accessToken)
-      .send({
-        question: 'Question',
-        answers: [
-          {
-            answer: 'Answer 1',
-            image: 'http://image-name.com'
-          },
-          {
-            answer: 'Answer 2'
-          }
-        ]
-      })
-      .expect(204)
   })
 })
