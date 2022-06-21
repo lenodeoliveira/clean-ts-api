@@ -7,13 +7,14 @@
         "sourceMap": true,
         "strict": true,
         "strictNullChecks": false,
-        "rootDir": "src"
+        "rootDir": "src",
+        "baseUrl": "src",
+        "paths": {
+            "@/*": ["*"]
+        }
     },
     "include": [
         "src"
     ],
-    "exclude": [
-        "**/*.spec.ts",
-        "**/*.test.ts"
-    ]
+    "exclude": []
 }
