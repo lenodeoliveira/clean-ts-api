@@ -4,16 +4,17 @@ import MockDate from 'mockdate'
 
 const makeFakeSurveyResultData = (): SaveSurveyResultModel => ({
   accountId: 'any_account_id',
-  surveyId: 'any_survey_id',
   answer: 'any_answers',
-  date: new Date()
+  date: new Date(),
+  surveyId: 'any_survey_id'
 })
 const makeFakeSurveyResult = (): SurveyResultModel => ({
-  id: 'any_id',
   accountId: 'any_account_id',
-  surveyId: 'any_survey_id',
   answer: 'any_answers',
-  date: new Date()
+  date: new Date(),
+  id: 'any_id',
+  surveyId: 'any_survey_id'
+
 })
 
 const makeSaveSurveyResultRepository = (): SaveSurveyResultRepository => {
@@ -63,5 +64,11 @@ describe('DbSaveSurveyResult usecase', () => {
     jest.spyOn(saveSurveyResultRepositoryStub, 'save').mockReturnValueOnce(new Promise((_resolve, reject) => reject(new Error())))
     const promise = sut.save(makeFakeSurveyResultData())
     await expect(promise).rejects.toThrow()
+  })
+
+  test('Should return SurveyResult on success', async () => {
+    const { sut } = makeSut()
+    const surveyResult = await sut.save(makeFakeSurveyResultData())
+    expect(surveyResult).toEqual(makeFakeSurveyResult())
   })
 })
