@@ -1,4 +1,4 @@
-import { Collection } from 'mongodb'
+import { Collection, ObjectId } from 'mongodb'
 import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
 import { SurveyResultRepository } from './survey-result-mongo-repository'
 import { SurveyModel } from '@/domain/models/survey'
@@ -71,20 +71,26 @@ describe('Survey Result Repository', () => {
       expect(surveyResult.id).toBeTruthy()
       expect(surveyResult.answer).toBe(survey.answers[0].answer)
     })
-    test('Should add a survey result if its new', async () => {
+    test('Should update survey result if not new', async () => {
       const survey = await makeSurvey()
       const accountId = await makeAccount()
+      const { insertedId } = await surveyResultCollection.insertOne({
+        surveyId: new ObjectId(survey.id),
+        accountId: new ObjectId(accountId),
+        answer: survey.answers[0].answer,
+        date: new Date()
+      })
       const sut = makeSut()
       const surveyResult = await sut.save({
         surveyId: survey.id,
         accountId,
-        answer: survey.answers[0].answer,
+        answer: survey.answers[1].answer,
         date: new Date()
       })
-      expect(surveyResult).toBeTruthy()
-      expect(surveyResult.id).toBeTruthy()
-      expect(surveyResult.answer).toBe(survey.answers[0].answer)
-    })
 
+      expect(surveyResult).toBeTruthy()
+      expect(surveyResult.id).toEqual(insertedId.toHexString())
+      expect(surveyResult.answer).toBe(survey.answers[1].answer)
+    })
   })
 })
