@@ -1,37 +1,16 @@
 
 import { DbLoadSurveyById } from './db-load-survey-by-id'
-import { SurveyModel, LoadSurveyByIdsRepository } from './db-load-survey-by-id-protocols'
+import { LoadSurveyByIdsRepository, throwError, mockSurveyModel } from './db-load-survey-by-id-protocols'
+import { mockLoadSurveyByIdRepository } from '@/data/test'
 import MockDate from 'mockdate'
-
-const makeFakeSurvey = (): SurveyModel => {
-  return {
-    id: 'any_id',
-    question: 'any_question',
-    answers: [{
-      image: 'any_image',
-      answer: 'any_answer'
-    }],
-    date: new Date()
-  }
-}
 
 type SutTypes = {
   sut: DbLoadSurveyById
   loadSurveyByIdsRepositoryStub: LoadSurveyByIdsRepository
 }
 
-const makeLoadSurveysRepositoryStub = (): LoadSurveyByIdsRepository => {
-  class LoadSurveyByIdsRepositoryStub implements LoadSurveyByIdsRepository {
-    async loadById (id: string): Promise<SurveyModel> {
-      return await new Promise(resolve => resolve(makeFakeSurvey()))
-    }
-  }
-
-  return new LoadSurveyByIdsRepositoryStub()
-}
-
 const makeSut = (): SutTypes => {
-  const loadSurveyByIdsRepositoryStub = makeLoadSurveysRepositoryStub()
+  const loadSurveyByIdsRepositoryStub = mockLoadSurveyByIdRepository()
   const sut = new DbLoadSurveyById(loadSurveyByIdsRepositoryStub)
 
   return {
@@ -59,12 +38,12 @@ describe('DbLoadSurveysById', () => {
   test('Should return Survey on success', async () => {
     const { sut } = makeSut()
     const httpResponse = await sut.loadById('any_id')
-    expect(httpResponse).toEqual(makeFakeSurvey())
+    expect(httpResponse).toEqual(mockSurveyModel())
   })
 
   test('Should throw if LoadSurveyByIdsRepository throws', async () => {
     const { sut, loadSurveyByIdsRepositoryStub } = makeSut()
-    jest.spyOn(loadSurveyByIdsRepositoryStub, 'loadById').mockReturnValueOnce(new Promise((_resolve, reject) => reject(new Error())))
+    jest.spyOn(loadSurveyByIdsRepositoryStub, 'loadById').mockImplementationOnce(throwError)
     const promise = sut.loadById('any_id')
     await expect(promise).rejects.toThrow()
   })
