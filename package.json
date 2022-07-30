@@ -58,7 +58,7 @@
     "module-alias": "^2.2.2",
     "mongodb": "^4.3.1",
     "nodemon": "^2.0.15",
-    "swagger-ui-express": "^4.4.0",
+    "swagger-ui-express": "^4.5.0",
     "ts-node": "^10.4.0",
     "validator": "^13.7.0"
   },
