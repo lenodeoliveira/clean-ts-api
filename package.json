@@ -18,8 +18,9 @@
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Lennon de Oliveira",
+  "license": "GPL-3.0-or-later",
+  "repository": "github:lenodeoliveira/clean-ts-api",
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.2.0",
     "@types/bcrypt": "^5.0.0",
