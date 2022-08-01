@@ -68,13 +68,16 @@ describe('Survey Result Repository', () => {
         date: new Date()
       })
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.id).toBeTruthy()
-      expect(surveyResult.answer).toBe(survey.answers[0].answer)
+      const objectId = new ObjectId(survey.id)
+      expect(surveyResult.surveyId).toEqual(objectId)
+      expect(surveyResult.answers[0].answer).toBe(survey.answers[0].answer)
+      expect(surveyResult.answers[0].count).toBe(1)
+      expect(surveyResult.answers[0].percent).toBe(100)
     })
     test('Should update survey result if not new', async () => {
       const survey = await makeSurvey()
       const accountId = await makeAccount()
-      const { insertedId } = await surveyResultCollection.insertOne({
+      await surveyResultCollection.insertOne({
         surveyId: new ObjectId(survey.id),
         accountId: new ObjectId(accountId),
         answer: survey.answers[0].answer,
@@ -87,10 +90,12 @@ describe('Survey Result Repository', () => {
         answer: survey.answers[1].answer,
         date: new Date()
       })
-
+      const objectId = new ObjectId(survey.id)
       expect(surveyResult).toBeTruthy()
-      expect(surveyResult.id).toEqual(insertedId.toHexString())
-      expect(surveyResult.answer).toBe(survey.answers[1].answer)
+      expect(surveyResult.surveyId).toEqual(objectId)
+      expect(surveyResult.answers[0].answer).toBe(survey.answers[1].answer)
+      expect(surveyResult.answers[0].count).toBe(1)
+      expect(surveyResult.answers[0].percent).toBe(100)
     })
   })
 })

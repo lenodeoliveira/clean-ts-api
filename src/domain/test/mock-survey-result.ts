@@ -9,4 +9,19 @@ export const mockSaveSurveyResultParams = (): SaveSurveyResultParams => ({
   surveyId: 'any_survey_id'
 })
 
-export const mockSurveyResultModel = (): SurveyResultModel => Object.assign({}, mockSaveSurveyResultParams(), { id: 'any_id' })
+export const mockSurveyResultModel = (): SurveyResultModel => ({
+  surveyId: 'any_survey_id',
+  question: 'any_question',
+  answers: [{
+    answer: 'any_answer',
+    count: 1,
+    percent: 50
+  },
+  {
+    image: 'other_image',
+    answer: 'other_answer',
+    count: 7,
+    percent: 70
+  }],
+  date: new Date()
+})
