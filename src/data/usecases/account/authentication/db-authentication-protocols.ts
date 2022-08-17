@@ -1,6 +1,7 @@
 export * from './db-authentication'
 export * from '@/domain/test/'
 export * from '@/domain/models/account'
+export * from '@/domain/models/authentication'
 export * from '@/domain/usecases/account/authentication'
 export * from '@/data/test'
 export * from '@/data/protocols/db/account/load-account-by-email-repository'
