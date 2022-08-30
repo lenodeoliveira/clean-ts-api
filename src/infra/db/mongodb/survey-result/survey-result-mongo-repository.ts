@@ -20,7 +20,7 @@ export class SurveyResultRepository implements SaveSurveyResultRepository, LoadS
     })
   }
 
-  async loadBySurveyId (surveyId: string): Promise<SurveyResultModel> {
+  async loadBySurveyId (surveyId: string, accountId: string): Promise<SurveyResultModel> {
     const surveyResultCollection = await MongoHelper.getCollection('surveyResults')
     const query = new QueryBuilder()
       .match({
@@ -58,6 +58,11 @@ export class SurveyResultRepository implements SaveSurveyResultRepository, LoadS
         },
         count: {
           $sum: 1
+        },
+        currentAccountAnswer: {
+          $push: {
+            $cond: [{ $eq: ['$data.accountId', new ObjectId(accountId)] }, '$data.answer', '$invalid']
+          }
         }
       })
       .project({
@@ -92,6 +97,13 @@ export class SurveyResultRepository implements SaveSurveyResultRepository, LoadS
                     },
                     else: 0
                   }
+                },
+                isCurrentAccountAnswerCount: {
+                  $cond: [{
+                    $eq: ['$$item.answer', {
+                      $arrayElemAt: ['$currentAccountAnswer', 0]
+                    }]
+                  }, 1, 0]
                 }
               }]
             }
@@ -139,8 +151,10 @@ export class SurveyResultRepository implements SaveSurveyResultRepository, LoadS
         },
         percent: {
           $sum: '$answers.percent'
+        },
+        isCurrentAccountAnswerCount: {
+          $sum: '$answers.isCurrentAccountAnswerCount'
         }
-
       })
       .project({
         _id: 0,
@@ -151,7 +165,10 @@ export class SurveyResultRepository implements SaveSurveyResultRepository, LoadS
           answer: '$_id.answer',
           image: '$_id.image',
           count: '$count',
-          percent: '$percent'
+          percent: '$percent',
+          isCurrentAccountAnswer: {
+            $eq: ['$isCurrentAccountAnswerCount', 1]
+          }
         }
       })
       .sort({
@@ -169,7 +186,9 @@ export class SurveyResultRepository implements SaveSurveyResultRepository, LoadS
       })
       .project({
         _id: 0,
-        surveyId: '$_id.surveyId',
+        surveyId: {
+          $toString: '$_id.surveyId'
+        },
         question: '$_id.question',
         date: '$_id.date',
         answers: '$answers'
