@@ -1,7 +1,7 @@
 {
   "name": "clean-ts-api",
   "version": "2.5.4",
-  "description": "",
+  "description": "NodeJs Rest API and GraphQL using TDD, Clean Architecture, Typescript and Design Patterns",
   "main": "index.js",
   "scripts": {
     "start": "node dist/main/server.js",
@@ -22,7 +22,7 @@
   "keywords": [],
   "author": "Lennon de Oliveira",
   "license": "GPL-3.0-or-later",
-  "repository": "github:lenodeoliveira/clean-ts-api",
+  "repository": "",
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.2.0",
     "@types/bcrypt": "^5.0.0",
