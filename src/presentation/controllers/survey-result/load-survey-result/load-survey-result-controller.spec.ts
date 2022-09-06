@@ -2,14 +2,12 @@ import { forbidden, serverError, ok } from '@/presentation/helpers/http/http-hel
 import { InvalidParamError } from '@/presentation/errors'
 import { mockLoadSurveyById, mockLoadSurveyResult } from '@/presentation/test'
 import { LoadSurveyResultController } from './load-survey-result-controller'
-import { HttpRequest, LoadSurveyById, throwError, LoadSurveyResult, mockSurveyResultModel } from './load-survey-result-protocols'
+import { LoadSurveyById, throwError, LoadSurveyResult, mockSurveyResultModel } from './load-survey-result-protocols'
 import MockDate from 'mockdate'
 
-const mockRequest = (): HttpRequest => ({
+const mockRequest = (): LoadSurveyResultController.Request => ({
   accountId: 'any_account_id',
-  params: {
-    surveyId: 'any_id'
-  }
+  surveyId: 'any_id'
 })
 
 type SutTypes = {

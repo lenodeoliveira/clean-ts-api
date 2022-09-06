@@ -1,13 +1,11 @@
 import { forbidden, ok, serverError } from '@/presentation/helpers/http/http-helper'
 import { AccessDeniedError } from '@/presentation/errors/access-denied-error'
 import { AuthMiddleware } from './auth-middleware'
-import { LoadAccountByToken, HttpRequest, throwError } from './auth-middleware-protocols'
+import { LoadAccountByToken, throwError } from './auth-middleware-protocols'
 import { mockLoadAccountByToken } from '@/presentation/test/'
 
-const mockRequest = (): HttpRequest => ({
-  headers: {
-    'x-access-token': 'any_token'
-  }
+const mockRequest = (): AuthMiddleware.Request => ({
+  accessToken: 'any_token'
 })
 
 type SutTypes = {
@@ -27,7 +25,7 @@ const makeSut = (role?: string): SutTypes => {
 describe('Auth Middleware', () => {
   test('Should return 403 if no x-acess-token exists in headers', async () => {
     const { sut } = makeSut()
-    const httpResponse = await sut.handle({})
+    const httpResponse = await sut.handle({} as any)
     expect(httpResponse).toEqual(forbidden(new AccessDeniedError()))
   })
 
