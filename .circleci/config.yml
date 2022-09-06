@@ -15,7 +15,7 @@ workflows:
 jobs:
   build:
     docker:
-      - image: 'circleci/node:14.17.6'
+      - image: cimg/node:14.17.6
     steps:
       - checkout
       - restore_cache:
