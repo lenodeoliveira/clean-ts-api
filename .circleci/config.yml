@@ -43,6 +43,4 @@ jobs:
           path: ~/junit
       - store_artifacts:
           path: ~/junit
-      - coveralls/upload:
-          verbose: true
         
