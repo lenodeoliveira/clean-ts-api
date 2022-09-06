@@ -35,7 +35,8 @@ jobs:
       - run:
           name: tests and generates coverage report
           command: |
-            npm run test:coveralls -v $(circleci tests glob "**/*.spec.ts" "**/*.test.ts", "**/test/**" | circleci tests split --split-by=timings)
+                    TEST=$(circleci tests glob "**/*.spec.ts" "**/*.test.ts", "**/test/**" | circleci tests split --split-by=timings)
+                    npm run test:coveralls $TEST
       - run: 
           command: cp junit.xml ~/junit/
           when: always
