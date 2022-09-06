@@ -16,7 +16,6 @@ jobs:
   build:
     docker:
       - image: cimg/node:14.17.6
-    parallelism: 4
     steps:
       - checkout
       - restore_cache:
