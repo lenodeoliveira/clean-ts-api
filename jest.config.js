@@ -2,7 +2,10 @@ module.exports = {
   roots: [
     '<rootDir>/src'
   ],
-
+  reporters: [
+    'default',
+    'jest-junit'
+  ],
   collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',

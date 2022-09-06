@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="155" failures="0" errors="0" time="30.248">
+  <testsuite name="Survey Result Repository" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:51:48" time="4.246" tests="6">
+    <testcase classname="Survey Result Repository save() Should add a survey result if its new" name="Survey Result Repository save() Should add a survey result if its new" time="0.027" file="src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Survey Result Repository save() Should update survey result if not new" name="Survey Result Repository save() Should update survey result if not new" time="0.02" file="src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Survey Result Repository loadBySurveyId Should load survey result" name="Survey Result Repository loadBySurveyId Should load survey result" time="0.021" file="src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Survey Result Repository loadBySurveyId Should load survey result 3" name="Survey Result Repository loadBySurveyId Should load survey result 3" time="0.014" file="src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Survey Result Repository loadBySurveyId Should load survey result 2" name="Survey Result Repository loadBySurveyId Should load survey result 2" time="0.027" file="src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Survey Result Repository loadBySurveyId Should return null if there is no survey result" name="Survey Result Repository loadBySurveyId Should return null if there is no survey result" time="0.016" file="src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Account Mongo Repository" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:51:53" time="0.791" tests="9">
+    <testcase classname="Account Mongo Repository add() Should return an account on add success" name="Account Mongo Repository add() Should return an account on add success" time="0.02" file="src/infra/db/mongodb/account/account-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Account Mongo Repository loadByEmail() Should return an account on loadByEmail success" name="Account Mongo Repository loadByEmail() Should return an account on loadByEmail success" time="0.005" file="src/infra/db/mongodb/account/account-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Account Mongo Repository loadByEmail() Should return null if loadByEmail fails" name="Account Mongo Repository loadByEmail() Should return null if loadByEmail fails" time="0.005" file="src/infra/db/mongodb/account/account-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Account Mongo Repository updateAccessToken() Should update the account accessToken success" name="Account Mongo Repository updateAccessToken() Should update the account accessToken success" time="0.018" file="src/infra/db/mongodb/account/account-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Account Mongo Repository loadByToken() Should return an account on loadByToken without role" name="Account Mongo Repository loadByToken() Should return an account on loadByToken without role" time="0.011" file="src/infra/db/mongodb/account/account-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Account Mongo Repository loadByToken() Should return an account on loadByToken with admin role" name="Account Mongo Repository loadByToken() Should return an account on loadByToken with admin role" time="0.005" file="src/infra/db/mongodb/account/account-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Account Mongo Repository loadByToken() Should return null on loadByToken with invalid role" name="Account Mongo Repository loadByToken() Should return null on loadByToken with invalid role" time="0.008" file="src/infra/db/mongodb/account/account-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Account Mongo Repository loadByToken() Should return an account on loadByToken if user is admin " name="Account Mongo Repository loadByToken() Should return an account on loadByToken if user is admin " time="0.007" file="src/infra/db/mongodb/account/account-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Account Mongo Repository loadByToken() Should return null if loadByToken fails" name="Account Mongo Repository loadByToken() Should return null if loadByToken fails" time="0.003" file="src/infra/db/mongodb/account/account-mongo-repository.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="DbAuthentication UseCase" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:51:53" time="0.581" tests="11">
+    <testcase classname="DbAuthentication UseCase Should call LoadAccountByEmailRepository with correct email" name="DbAuthentication UseCase Should call LoadAccountByEmailRepository with correct email" time="0.003" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should throw if LoadAccountByEmailRepository throws" name="DbAuthentication UseCase Should throw if LoadAccountByEmailRepository throws" time="0.014" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should return null if LoadAccountByEmailRepository returns null" name="DbAuthentication UseCase Should return null if LoadAccountByEmailRepository returns null" time="0.001" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should call HashComparer with correct values" name="DbAuthentication UseCase Should call HashComparer with correct values" time="0.001" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should throw if HashComparer throws" name="DbAuthentication UseCase Should throw if HashComparer throws" time="0.001" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should return null if HashComparer returns null" name="DbAuthentication UseCase Should return null if HashComparer returns null" time="0.001" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should call Encrypter with correct id" name="DbAuthentication UseCase Should call Encrypter with correct id" time="0.001" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should throw if Encrypter throws" name="DbAuthentication UseCase Should throw if Encrypter throws" time="0.001" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should return an data on success" name="DbAuthentication UseCase Should return an data on success" time="0.001" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should call UpdateAcessTokenRepository with correct values" name="DbAuthentication UseCase Should call UpdateAcessTokenRepository with correct values" time="0.001" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+    <testcase classname="DbAuthentication UseCase Should throw if UpdateAcessTokenRepository throws" name="DbAuthentication UseCase Should throw if UpdateAcessTokenRepository throws" time="0.012" file="src/data/usecases/account/authentication/db-authentication.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Survey Mongo Repository" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:51:54" time="0.817" tests="4">
+    <testcase classname="Survey Mongo Repository add() Should add a survey on success" name="Survey Mongo Repository add() Should add a survey on success" time="0.099" file="src/infra/db/mongodb/survey/survey-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Survey Mongo Repository loadAll() Should load all surveys on success" name="Survey Mongo Repository loadAll() Should load all surveys on success" time="0.107" file="src/infra/db/mongodb/survey/survey-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Survey Mongo Repository loadAll() Should load empty list" name="Survey Mongo Repository loadAll() Should load empty list" time="0.01" file="src/infra/db/mongodb/survey/survey-mongo-repository.spec.ts">
+    </testcase>
+    <testcase classname="Survey Mongo Repository loadById() Should load by id on success" name="Survey Mongo Repository loadById() Should load by id on success" time="0.021" file="src/infra/db/mongodb/survey/survey-mongo-repository.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignUp Controller" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:51:55" time="0.639" tests="8">
+    <testcase classname="SignUp Controller Should return 500 if AddAccount throws" name="SignUp Controller Should return 500 if AddAccount throws" time="0.013" file="src/presentation/controllers/login/signup/signup-controller.spec.ts">
+    </testcase>
+    <testcase classname="SignUp Controller Should call AddAccount with correct values" name="SignUp Controller Should call AddAccount with correct values" time="0.002" file="src/presentation/controllers/login/signup/signup-controller.spec.ts">
+    </testcase>
+    <testcase classname="SignUp Controller Should return 403 if AddAccount returns null" name="SignUp Controller Should return 403 if AddAccount returns null" time="0.001" file="src/presentation/controllers/login/signup/signup-controller.spec.ts">
+    </testcase>
+    <testcase classname="SignUp Controller Should return 200 if valid data is provided" name="SignUp Controller Should return 200 if valid data is provided" time="0.001" file="src/presentation/controllers/login/signup/signup-controller.spec.ts">
+    </testcase>
+    <testcase classname="SignUp Controller Should call Validation with correct value" name="SignUp Controller Should call Validation with correct value" time="0.003" file="src/presentation/controllers/login/signup/signup-controller.spec.ts">
+    </testcase>
+    <testcase classname="SignUp Controller Should return 400 if Validation returns an error" name="SignUp Controller Should return 400 if Validation returns an error" time="0.001" file="src/presentation/controllers/login/signup/signup-controller.spec.ts">
+    </testcase>
+    <testcase classname="SignUp Controller Should call Authentication with correct values" name="SignUp Controller Should call Authentication with correct values" time="0" file="src/presentation/controllers/login/signup/signup-controller.spec.ts">
+    </testcase>
+    <testcase classname="SignUp Controller Should return 500 if Authentication throws" name="SignUp Controller Should return 500 if Authentication throws" time="0.003" file="src/presentation/controllers/login/signup/signup-controller.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="SaveSurveyResult Controller" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:51:55" time="0.381" tests="7">
+    <testcase classname="SaveSurveyResult Controller Should call LoadSurveyById with correct values" name="SaveSurveyResult Controller Should call LoadSurveyById with correct values" time="0.004" file="src/presentation/controllers/survey-result/save-survey-result/save-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="SaveSurveyResult Controller Should return 403 if LoadSurveyById return null" name="SaveSurveyResult Controller Should return 403 if LoadSurveyById return null" time="0.001" file="src/presentation/controllers/survey-result/save-survey-result/save-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="SaveSurveyResult Controller Should return 500 if LoadSurveyById throws" name="SaveSurveyResult Controller Should return 500 if LoadSurveyById throws" time="0.012" file="src/presentation/controllers/survey-result/save-survey-result/save-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="SaveSurveyResult Controller Should return 403 if an invalid answer is provided" name="SaveSurveyResult Controller Should return 403 if an invalid answer is provided" time="0.001" file="src/presentation/controllers/survey-result/save-survey-result/save-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="SaveSurveyResult Controller Should call SaveSurveyResult with correct values" name="SaveSurveyResult Controller Should call SaveSurveyResult with correct values" time="0.001" file="src/presentation/controllers/survey-result/save-survey-result/save-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="SaveSurveyResult Controller Should return 500 if SaveSurveyResult throws" name="SaveSurveyResult Controller Should return 500 if SaveSurveyResult throws" time="0.001" file="src/presentation/controllers/survey-result/save-survey-result/save-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="SaveSurveyResult Controller Should return 200 on success" name="SaveSurveyResult Controller Should return 200 on success" time="0.001" file="src/presentation/controllers/survey-result/save-survey-result/save-survey-result-controller.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="DbAddAccount UseCase" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:51:56" time="0.336" tests="7">
+    <testcase classname="DbAddAccount UseCase Should call Hasher with correct password" name="DbAddAccount UseCase Should call Hasher with correct password" time="0.003" file="src/data/usecases/account/add-account/db-add-account.spec.ts">
+    </testcase>
+    <testcase classname="DbAddAccount UseCase Should throw if Hasher throws" name="DbAddAccount UseCase Should throw if Hasher throws" time="0.009" file="src/data/usecases/account/add-account/db-add-account.spec.ts">
+    </testcase>
+    <testcase classname="DbAddAccount UseCase Should call AddAccountRepository with correct values" name="DbAddAccount UseCase Should call AddAccountRepository with correct values" time="0" file="src/data/usecases/account/add-account/db-add-account.spec.ts">
+    </testcase>
+    <testcase classname="DbAddAccount UseCase Should throw if AddAccountRepository throws" name="DbAddAccount UseCase Should throw if AddAccountRepository throws" time="0.001" file="src/data/usecases/account/add-account/db-add-account.spec.ts">
+    </testcase>
+    <testcase classname="DbAddAccount UseCase Should return true if LoadAccountByEmailRepository returns null" name="DbAddAccount UseCase Should return true if LoadAccountByEmailRepository returns null" time="0" file="src/data/usecases/account/add-account/db-add-account.spec.ts">
+    </testcase>
+    <testcase classname="DbAddAccount UseCase Should return false if LoadAccountByEmailRepository returns and account" name="DbAddAccount UseCase Should return false if LoadAccountByEmailRepository returns and account" time="0.001" file="src/data/usecases/account/add-account/db-add-account.spec.ts">
+    </testcase>
+    <testcase classname="DbAddAccount UseCase Should call LoadAccountByEmailRepository with correct email" name="DbAddAccount UseCase Should call LoadAccountByEmailRepository with correct email" time="0" file="src/data/usecases/account/add-account/db-add-account.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Survey Routes" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:51:56" time="3.583" tests="5">
+    <testcase classname="Survey Routes POST /surveys Should return 403 on add survey without acessToken" name="Survey Routes POST /surveys Should return 403 on add survey without acessToken" time="0.051" file="src/main/routes/survey-routes.test.ts">
+    </testcase>
+    <testcase classname="Survey Routes POST /surveys Should return 204 on add survey with valid accessToken" name="Survey Routes POST /surveys Should return 204 on add survey with valid accessToken" time="0.039" file="src/main/routes/survey-routes.test.ts">
+    </testcase>
+    <testcase classname="Survey Routes GET /surveys Should return 403 on loaf survey without acessToken" name="Survey Routes GET /surveys Should return 403 on loaf survey without acessToken" time="0.008" file="src/main/routes/survey-routes.test.ts">
+    </testcase>
+    <testcase classname="Survey Routes GET /surveys Should return 204 on load survey with valid accessToken" name="Survey Routes GET /surveys Should return 204 on load survey with valid accessToken" time="0.019" file="src/main/routes/survey-routes.test.ts">
+    </testcase>
+    <testcase classname="Survey Routes GET /surveys Should return 200 on load survey with valid accessToken" name="Survey Routes GET /surveys Should return 200 on load survey with valid accessToken" time="0.02" file="src/main/routes/survey-routes.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="DbLoadSurveyResult Usecase" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:00" time="0.289" tests="5">
+    <testcase classname="DbLoadSurveyResult Usecase Should call LoadSurveyResultRepository with correct values" name="DbLoadSurveyResult Usecase Should call LoadSurveyResultRepository with correct values" time="0.002" file="src/data/usecases/survey-result/load-survey-result/db-load-survey-result.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadSurveyResult Usecase Should throw if LoadSurveyResultRepository throws" name="DbLoadSurveyResult Usecase Should throw if LoadSurveyResultRepository throws" time="0.017" file="src/data/usecases/survey-result/load-survey-result/db-load-survey-result.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadSurveyResult Usecase Should call loadSurveyByIdRepository if LoadSurveyResultRepository returns null" name="DbLoadSurveyResult Usecase Should call loadSurveyByIdRepository if LoadSurveyResultRepository returns null" time="0.001" file="src/data/usecases/survey-result/load-survey-result/db-load-survey-result.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadSurveyResult Usecase Should return surveyResultModel with all answers with count 0 if LoadSurveyResultRepository returns null" name="DbLoadSurveyResult Usecase Should return surveyResultModel with all answers with count 0 if LoadSurveyResultRepository returns null" time="0.001" file="src/data/usecases/survey-result/load-survey-result/db-load-survey-result.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadSurveyResult Usecase Should return surveyResultModel on success" name="DbLoadSurveyResult Usecase Should return surveyResultModel on success" time="0.001" file="src/data/usecases/survey-result/load-survey-result/db-load-survey-result.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Survey Routes" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:00" time="1.538" tests="4">
+    <testcase classname="Survey Routes PUT /surveys/:surveyId/results Should return 403 on save survey result without accessToken" name="Survey Routes PUT /surveys/:surveyId/results Should return 403 on save survey result without accessToken" time="0.04" file="src/main/routes/survey-result-routes.test.ts">
+    </testcase>
+    <testcase classname="Survey Routes PUT /surveys/:surveyId/results Should return 200 on save survey result with accessToken" name="Survey Routes PUT /surveys/:surveyId/results Should return 200 on save survey result with accessToken" time="0.035" file="src/main/routes/survey-result-routes.test.ts">
+    </testcase>
+    <testcase classname="Survey Routes GET /surveys/:surveyId/results Should return 403 on load survey result without accessToken" name="Survey Routes GET /surveys/:surveyId/results Should return 403 on load survey result without accessToken" time="0.008" file="src/main/routes/survey-result-routes.test.ts">
+    </testcase>
+    <testcase classname="Survey Routes GET /surveys/:surveyId/results Should return 200 on load survey result with accessToken" name="Survey Routes GET /surveys/:surveyId/results Should return 200 on load survey result with accessToken" time="0.027" file="src/main/routes/survey-result-routes.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="LoadSurveyResultController" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:02" time="0.304" tests="6">
+    <testcase classname="LoadSurveyResultController Should call LoadSurveyById with correct value" name="LoadSurveyResultController Should call LoadSurveyById with correct value" time="0.003" file="src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="LoadSurveyResultController Should return 403 if LoadSurveyById returns null" name="LoadSurveyResultController Should return 403 if LoadSurveyById returns null" time="0.002" file="src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="LoadSurveyResultController Should return 500 if LoadSurveyById throws" name="LoadSurveyResultController Should return 500 if LoadSurveyById throws" time="0.029" file="src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="LoadSurveyResultController Should call LoadSurveyResult with correct values" name="LoadSurveyResultController Should call LoadSurveyResult with correct values" time="0.003" file="src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="LoadSurveyResultController Should return 500 if LoadSurveyResult throws" name="LoadSurveyResultController Should return 500 if LoadSurveyResult throws" time="0.004" file="src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.spec.ts">
+    </testcase>
+    <testcase classname="LoadSurveyResultController Should return 200 on success" name="LoadSurveyResultController Should return 200 on success" time="0.001" file="src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="DbLoadAccountByToken Usecase" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:02" time="0.296" tests="7">
+    <testcase classname="DbLoadAccountByToken Usecase Should call Decrypter with correct values" name="DbLoadAccountByToken Usecase Should call Decrypter with correct values" time="0.003" file="src/data/usecases/account/load-account-by-token/db-load-account-by-token.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadAccountByToken Usecase Should return null if Decrypter returns null" name="DbLoadAccountByToken Usecase Should return null if Decrypter returns null" time="0" file="src/data/usecases/account/load-account-by-token/db-load-account-by-token.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadAccountByToken Usecase Should call LoadAccountByTokenRepository with correct values" name="DbLoadAccountByToken Usecase Should call LoadAccountByTokenRepository with correct values" time="0" file="src/data/usecases/account/load-account-by-token/db-load-account-by-token.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadAccountByToken Usecase Should return null if LoadAccountByTokenRepository returns null" name="DbLoadAccountByToken Usecase Should return null if LoadAccountByTokenRepository returns null" time="0.001" file="src/data/usecases/account/load-account-by-token/db-load-account-by-token.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadAccountByToken Usecase Should return an account on success" name="DbLoadAccountByToken Usecase Should return an account on success" time="0.001" file="src/data/usecases/account/load-account-by-token/db-load-account-by-token.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadAccountByToken Usecase Should throw if Decrypter throws" name="DbLoadAccountByToken Usecase Should throw if Decrypter throws" time="0.001" file="src/data/usecases/account/load-account-by-token/db-load-account-by-token.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadAccountByToken Usecase Should throw if LoadAccountByTokenRepository throws" name="DbLoadAccountByToken Usecase Should throw if LoadAccountByTokenRepository throws" time="0.013" file="src/data/usecases/account/load-account-by-token/db-load-account-by-token.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Login Controller" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:02" time="0.449" tests="6">
+    <testcase classname="Login Controller Should call Authentication with correct values" name="Login Controller Should call Authentication with correct values" time="0.003" file="src/presentation/controllers/login/login/login-controller.spec.ts">
+    </testcase>
+    <testcase classname="Login Controller Should return 401 if invalid credentials are provided" name="Login Controller Should return 401 if invalid credentials are provided" time="0.001" file="src/presentation/controllers/login/login/login-controller.spec.ts">
+    </testcase>
+    <testcase classname="Login Controller Should return 500 if Authentication throws" name="Login Controller Should return 500 if Authentication throws" time="0.025" file="src/presentation/controllers/login/login/login-controller.spec.ts">
+    </testcase>
+    <testcase classname="Login Controller Should return 200 if valid credentials are provided" name="Login Controller Should return 200 if valid credentials are provided" time="0.002" file="src/presentation/controllers/login/login/login-controller.spec.ts">
+    </testcase>
+    <testcase classname="Login Controller Should call Validation with correct value" name="Login Controller Should call Validation with correct value" time="0.001" file="src/presentation/controllers/login/login/login-controller.spec.ts">
+    </testcase>
+    <testcase classname="Login Controller Should return 400 if Validation returns an error" name="Login Controller Should return 400 if Validation returns an error" time="0.001" file="src/presentation/controllers/login/login/login-controller.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="DbSaveSurveyResult usecase" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:03" time="0.273" tests="5">
+    <testcase classname="DbSaveSurveyResult usecase Should call SaveSurveyResultRepository with correct values" name="DbSaveSurveyResult usecase Should call SaveSurveyResultRepository with correct values" time="0.003" file="src/data/usecases/survey-result/save-survey-result/db-save-survey-result.spec.ts">
+    </testcase>
+    <testcase classname="DbSaveSurveyResult usecase Should throw if SaveSurveyResultRepository throws" name="DbSaveSurveyResult usecase Should throw if SaveSurveyResultRepository throws" time="0.009" file="src/data/usecases/survey-result/save-survey-result/db-save-survey-result.spec.ts">
+    </testcase>
+    <testcase classname="DbSaveSurveyResult usecase Should call LoadSurveyResultRepository with correct values" name="DbSaveSurveyResult usecase Should call LoadSurveyResultRepository with correct values" time="0.002" file="src/data/usecases/survey-result/save-survey-result/db-save-survey-result.spec.ts">
+    </testcase>
+    <testcase classname="DbSaveSurveyResult usecase Should throw if LoadSurveyResultRepository throws" name="DbSaveSurveyResult usecase Should throw if LoadSurveyResultRepository throws" time="0.001" file="src/data/usecases/survey-result/save-survey-result/db-save-survey-result.spec.ts">
+    </testcase>
+    <testcase classname="DbSaveSurveyResult usecase Should return SurveyResult on success" name="DbSaveSurveyResult usecase Should return SurveyResult on success" time="0.001" file="src/data/usecases/survey-result/save-survey-result/db-save-survey-result.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="AddSurvey Controller" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:03" time="0.285" tests="5">
+    <testcase classname="AddSurvey Controller Should call Validation with correct values" name="AddSurvey Controller Should call Validation with correct values" time="0.002" file="src/presentation/controllers/survey/add-survey/add-survey-controller.spec.ts">
+    </testcase>
+    <testcase classname="AddSurvey Controller Should return 400 if Validation fails" name="AddSurvey Controller Should return 400 if Validation fails" time="0.002" file="src/presentation/controllers/survey/add-survey/add-survey-controller.spec.ts">
+    </testcase>
+    <testcase classname="AddSurvey Controller Should call AddSurvey with correct values" name="AddSurvey Controller Should call AddSurvey with correct values" time="0.001" file="src/presentation/controllers/survey/add-survey/add-survey-controller.spec.ts">
+    </testcase>
+    <testcase classname="AddSurvey Controller Should return 500 if addSurvey throws" name="AddSurvey Controller Should return 500 if addSurvey throws" time="0.018" file="src/presentation/controllers/survey/add-survey/add-survey-controller.spec.ts">
+    </testcase>
+    <testcase classname="AddSurvey Controller Should return 204 on success" name="AddSurvey Controller Should return 204 on success" time="0.001" file="src/presentation/controllers/survey/add-survey/add-survey-controller.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Bcrypt Adapter" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:03" time="0.281" tests="7">
+    <testcase classname="Bcrypt Adapter hash() Should call hash with correct values" name="Bcrypt Adapter hash() Should call hash with correct values" time="0.003" file="src/infra/criptography/bcrypt-adapter/bcrypt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Bcrypt Adapter hash() Should return a valid hash on hash success" name="Bcrypt Adapter hash() Should return a valid hash on hash success" time="0" file="src/infra/criptography/bcrypt-adapter/bcrypt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Bcrypt Adapter hash() Should throw if hash throws" name="Bcrypt Adapter hash() Should throw if hash throws" time="0.01" file="src/infra/criptography/bcrypt-adapter/bcrypt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Bcrypt Adapter compare() Should call compare with correct values" name="Bcrypt Adapter compare() Should call compare with correct values" time="0.001" file="src/infra/criptography/bcrypt-adapter/bcrypt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Bcrypt Adapter compare() Should return true when compare succeeds" name="Bcrypt Adapter compare() Should return true when compare succeeds" time="0" file="src/infra/criptography/bcrypt-adapter/bcrypt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Bcrypt Adapter compare() Should return false when compare fails" name="Bcrypt Adapter compare() Should return false when compare fails" time="0" file="src/infra/criptography/bcrypt-adapter/bcrypt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Bcrypt Adapter compare() Should throw if compare throws" name="Bcrypt Adapter compare() Should throw if compare throws" time="0.001" file="src/infra/criptography/bcrypt-adapter/bcrypt-adapter.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Auth Middleware" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:04" time="0.325" tests="5">
+    <testcase classname="Auth Middleware Should return 403 if no x-acess-token exists in headers" name="Auth Middleware Should return 403 if no x-acess-token exists in headers" time="0.003" file="src/presentation/middlewares/auth-middleware.spec.ts">
+    </testcase>
+    <testcase classname="Auth Middleware Should calls LoadAccountByToken with correct accessToken" name="Auth Middleware Should calls LoadAccountByToken with correct accessToken" time="0.004" file="src/presentation/middlewares/auth-middleware.spec.ts">
+    </testcase>
+    <testcase classname="Auth Middleware Should return 403 if LoadAccountByToken returns null" name="Auth Middleware Should return 403 if LoadAccountByToken returns null" time="0.001" file="src/presentation/middlewares/auth-middleware.spec.ts">
+    </testcase>
+    <testcase classname="Auth Middleware Should return 200 if LoadAccountByToken returns an account" name="Auth Middleware Should return 200 if LoadAccountByToken returns an account" time="0.001" file="src/presentation/middlewares/auth-middleware.spec.ts">
+    </testcase>
+    <testcase classname="Auth Middleware Should return 500 if LoadAccountByToken throws" name="Auth Middleware Should return 500 if LoadAccountByToken throws" time="0.024" file="src/presentation/middlewares/auth-middleware.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="LogControllerDecorator" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:04" time="0.306" tests="3">
+    <testcase classname="LogControllerDecorator Should call controller handle" name="LogControllerDecorator Should call controller handle" time="0.003" file="src/main/decorators/log-controller-decorator.spec.ts">
+    </testcase>
+    <testcase classname="LogControllerDecorator Should return the same result of the controller" name="LogControllerDecorator Should return the same result of the controller" time="0.018" file="src/main/decorators/log-controller-decorator.spec.ts">
+    </testcase>
+    <testcase classname="LogControllerDecorator Should call LogErrorRepository with correct error if controller returns a server error" name="LogControllerDecorator Should call LogErrorRepository with correct error if controller returns a server error" time="0.001" file="src/main/decorators/log-controller-decorator.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Jwt Adapter" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:04" time="0.265" tests="6">
+    <testcase classname="Jwt Adapter sign() Should call sign with correct values" name="Jwt Adapter sign() Should call sign with correct values" time="0.002" file="src/infra/criptography/jwt-adapter/jwt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Jwt Adapter sign() Should return a token on sign sucess" name="Jwt Adapter sign() Should return a token on sign sucess" time="0.001" file="src/infra/criptography/jwt-adapter/jwt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Jwt Adapter sign() Should throw if sign throws" name="Jwt Adapter sign() Should throw if sign throws" time="0.024" file="src/infra/criptography/jwt-adapter/jwt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Jwt Adapter verify() Should call verify with correct values" name="Jwt Adapter verify() Should call verify with correct values" time="0.001" file="src/infra/criptography/jwt-adapter/jwt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Jwt Adapter verify() Should return a value on verify sucess" name="Jwt Adapter verify() Should return a value on verify sucess" time="0" file="src/infra/criptography/jwt-adapter/jwt-adapter.spec.ts">
+    </testcase>
+    <testcase classname="Jwt Adapter verify() Should throw if verify throws" name="Jwt Adapter verify() Should throw if verify throws" time="0.001" file="src/infra/criptography/jwt-adapter/jwt-adapter.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="LoadSurveys Controller" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:05" time="0.277" tests="4">
+    <testcase classname="LoadSurveys Controller Should call LoadSurveys with correct value" name="LoadSurveys Controller Should call LoadSurveys with correct value" time="0.002" file="src/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts">
+    </testcase>
+    <testcase classname="LoadSurveys Controller Should return 200 on success" name="LoadSurveys Controller Should return 200 on success" time="0.002" file="src/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts">
+    </testcase>
+    <testcase classname="LoadSurveys Controller Should return 204 if LoadSurveys returns empty" name="LoadSurveys Controller Should return 204 if LoadSurveys returns empty" time="0.001" file="src/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts">
+    </testcase>
+    <testcase classname="LoadSurveys Controller Should return 500 if LoadSurveys throws" name="LoadSurveys Controller Should return 500 if LoadSurveys throws" time="0.016" file="src/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="DbLoadSurveys" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:05" time="0.277" tests="4">
+    <testcase classname="DbLoadSurveys Should call Load" name="DbLoadSurveys Should call Load" time="0.004" file="src/data/usecases/survey/load-surveys/db-load-surveys.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadSurveys Should call LoadSurveysRepository" name="DbLoadSurveys Should call LoadSurveysRepository" time="0.001" file="src/data/usecases/survey/load-surveys/db-load-surveys.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadSurveys Should a list of Surveys on success" name="DbLoadSurveys Should a list of Surveys on success" time="0.002" file="src/data/usecases/survey/load-surveys/db-load-surveys.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadSurveys Should throw if LoadSurveysRepository throws" name="DbLoadSurveys Should throw if LoadSurveysRepository throws" time="0.012" file="src/data/usecases/survey/load-surveys/db-load-surveys.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Login Routes" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:05" time="2.804" tests="3">
+    <testcase classname="Login Routes POST /signup Should return 200 on signup" name="Login Routes POST /signup Should return 200 on signup" time="0.723" file="src/main/routes/login-routes.test.ts">
+    </testcase>
+    <testcase classname="Login Routes POST /login Should return 200 on login" name="Login Routes POST /login Should return 200 on login" time="0.676" file="src/main/routes/login-routes.test.ts">
+    </testcase>
+    <testcase classname="Login Routes POST /login Should return 401 on login" name="Login Routes POST /login Should return 401 on login" time="0.009" file="src/main/routes/login-routes.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="DbLoadSurveysById" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:08" time="0.298" tests="3">
+    <testcase classname="DbLoadSurveysById Should call LoadSurveyByIdsRepository" name="DbLoadSurveysById Should call LoadSurveyByIdsRepository" time="0.003" file="src/data/usecases/survey/load-survey-by-id/db-load-survey-by-id.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadSurveysById Should return Survey on success" name="DbLoadSurveysById Should return Survey on success" time="0.006" file="src/data/usecases/survey/load-survey-by-id/db-load-survey-by-id.spec.ts">
+    </testcase>
+    <testcase classname="DbLoadSurveysById Should throw if LoadSurveyByIdsRepository throws" name="DbLoadSurveysById Should throw if LoadSurveyByIdsRepository throws" time="0.025" file="src/data/usecases/survey/load-survey-by-id/db-load-survey-by-id.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validation Composite" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:08" time="0.319" tests="3">
+    <testcase classname="Validation Composite Should return an error if any validation fails" name="Validation Composite Should return an error if any validation fails" time="0.002" file="src/validation/validators/validation-composite.spec.ts">
+    </testcase>
+    <testcase classname="Validation Composite Should return the first error if more than one validation fails" name="Validation Composite Should return the first error if more than one validation fails" time="0.001" file="src/validation/validators/validation-composite.spec.ts">
+    </testcase>
+    <testcase classname="Validation Composite Should not return if validation succeeds" name="Validation Composite Should not return if validation succeeds" time="0.003" file="src/validation/validators/validation-composite.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Email Validation" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:09" time="0.247" tests="3">
+    <testcase classname="Email Validation Should return an error if EmailValidator returns false" name="Email Validation Should return an error if EmailValidator returns false" time="0.003" file="src/validation/validators/email-validation.spec.ts">
+    </testcase>
+    <testcase classname="Email Validation Should call EmailValidator with correct email" name="Email Validation Should call EmailValidator with correct email" time="0" file="src/validation/validators/email-validation.spec.ts">
+    </testcase>
+    <testcase classname="Email Validation Should throw if EmailValidator throws" name="Email Validation Should throw if EmailValidator throws" time="0.015" file="src/validation/validators/email-validation.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="DdAddSurvey Usecase" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:09" time="0.31" tests="2">
+    <testcase classname="DdAddSurvey Usecase Should calls AddSurveyRepository with correct values" name="DdAddSurvey Usecase Should calls AddSurveyRepository with correct values" time="0.003" file="src/data/usecases/survey/add-survey/db-add-survey.spec.ts">
+    </testcase>
+    <testcase classname="DdAddSurvey Usecase Should throw if AddSurveyRepository throws" name="DdAddSurvey Usecase Should throw if AddSurveyRepository throws" time="0.007" file="src/data/usecases/survey/add-survey/db-add-survey.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignUpValidation Factory" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:09" time="0.269" tests="1">
+    <testcase classname="SignUpValidation Factory Should call ValidationComposite with all validations" name="SignUpValidation Factory Should call ValidationComposite with all validations" time="0.003" file="src/main/factories/controller/login/signup/signup-validation-factory.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignUpValidation Factory" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:10" time="0.277" tests="1">
+    <testcase classname="SignUpValidation Factory Should call ValidationComposite with all validations" name="SignUpValidation Factory Should call ValidationComposite with all validations" time="0.003" file="src/main/factories/controller/login/login/login-validation-factory.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="EmailValidator Adapter" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:10" time="0.239" tests="3">
+    <testcase classname="EmailValidator Adapter Should return false if validator returns false" name="EmailValidator Adapter Should return false if validator returns false" time="0.002" file="src/infra/validators/email-validator-adapter.spec.ts">
+    </testcase>
+    <testcase classname="EmailValidator Adapter Should return true if validator returns true" name="EmailValidator Adapter Should return true if validator returns true" time="0.001" file="src/infra/validators/email-validator-adapter.spec.ts">
+    </testcase>
+    <testcase classname="EmailValidator Adapter Should call validator with correct  email" name="EmailValidator Adapter Should call validator with correct  email" time="0.002" file="src/infra/validators/email-validator-adapter.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Log Mongo Repository" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:10" time="0.467" tests="1">
+    <testcase classname="Log Mongo Repository Should create an error log on sucess " name="Log Mongo Repository Should create an error log on sucess " time="0.02" file="src/infra/db/mongodb/log/log-mongo-repository.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Compare Fields Validation" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:11" time="0.234" tests="2">
+    <testcase classname="Compare Fields Validation Should return a InvalidParamError if validation fails" name="Compare Fields Validation Should return a InvalidParamError if validation fails" time="0.003" file="src/validation/validators/compare-fields-validation.spec.ts">
+    </testcase>
+    <testcase classname="Compare Fields Validation Should not return if validation succeeds" name="Compare Fields Validation Should not return if validation succeeds" time="0.001" file="src/validation/validators/compare-fields-validation.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Required Field Validation" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:11" time="0.221" tests="2">
+    <testcase classname="Required Field Validation Should return a MissingParamError if validation fails" name="Required Field Validation Should return a MissingParamError if validation fails" time="0.003" file="src/validation/validators/required-field-validation.spec.ts">
+    </testcase>
+    <testcase classname="Required Field Validation Should not return if validation succeeds" name="Required Field Validation Should not return if validation succeeds" time="0.001" file="src/validation/validators/required-field-validation.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="AddSurveyValidation Factory" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:11" time="0.224" tests="1">
+    <testcase classname="AddSurveyValidation Factory Should call ValidationComposite with all validations" name="AddSurveyValidation Factory Should call ValidationComposite with all validations" time="0.002" file="src/main/factories/controller/survey/add-survey/add-survey-validation-factory.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Content Type middleware" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:11" time="1.691" tests="2">
+    <testcase classname="Content Type middleware Should return default content type as json" name="Content Type middleware Should return default content type as json" time="0.013" file="src/main/middlewares/content-type.test.ts">
+    </testcase>
+    <testcase classname="Content Type middleware Should return xml content type when forced" name="Content Type middleware Should return xml content type when forced" time="0.005" file="src/main/middlewares/content-type.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="NoCache middleware" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:13" time="1.5" tests="1">
+    <testcase classname="NoCache middleware Should disable cache " name="NoCache middleware Should disable cache " time="0.018" file="src/main/middlewares/no-cache.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Mongo helper" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:14" time="0.363" tests="1">
+    <testcase classname="Mongo helper Should reconnect if mongodb is down" name="Mongo helper Should reconnect if mongodb is down" time="0.009" file="src/infra/db/mongodb/helpers/mongo-helper.spec.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="CORS middleware" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:15" time="1.346" tests="1">
+    <testcase classname="CORS middleware Should enable CORS" name="CORS middleware Should enable CORS" time="0.011" file="src/main/middlewares/cors.test.ts">
+    </testcase>
+  </testsuite>
+  <testsuite name="Body Parser middleware" errors="0" failures="0" skipped="0" timestamp="2022-09-06T18:52:16" time="1.783" tests="1">
+    <testcase classname="Body Parser middleware Should parse body as json" name="Body Parser middleware Should parse body as json" time="0.024" file="src/main/middlewares/body-parser.test.ts">
+    </testcase>
+  </testsuite>
+</testsuites>
