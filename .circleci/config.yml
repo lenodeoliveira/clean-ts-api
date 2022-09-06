@@ -33,6 +33,9 @@ jobs:
           command: npx eslint 'src/**'
       - run:
           name: tests and generates coverage report
-          command: npm run test:coveralls -v $(npm run test:coveralls | circleci tests split --split-by=timings)
+          command: |
+            echo $(circleci tests glob "**/*.spec.ts" "**/*.test.ts", "**/test/**")
+            npm run test:coveralls -v $(npm run test:coveralls | circleci tests split --split-by=timings)
       - coveralls/upload:
           verbose: true
+        
