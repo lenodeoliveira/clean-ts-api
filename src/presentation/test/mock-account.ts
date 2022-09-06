@@ -9,7 +9,7 @@ import { AuthenticationModel } from '@/domain/models/authentication'
 export const mockAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
     async add (account: AddAccount.Params): Promise<AddAccount.Result> {
-      return await Promise.resolve(mockAccountModel())
+      return await Promise.resolve(true)
     }
   }
   return new AddAccountStub()
