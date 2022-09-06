@@ -98,7 +98,7 @@ describe('DbAuthentication UseCase', () => {
     await expect(promise).rejects.toThrow()
   })
 
-  test('Should return an Authentication model on success', async () => {
+  test('Should return an data on success', async () => {
     const { sut } = makeSut()
     const { accessToken, name } = await sut.auth(mockFakeAuthentication())
     expect(accessToken).toBe('any_token')
