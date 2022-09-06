@@ -35,7 +35,7 @@ jobs:
       - run:
           name: tests and generates coverage report
           command: |
-                    TEST=$(circleci tests glob "src/**/*.spec.ts" "src/**/*.test.ts", "src/**/test/**" | circleci tests split --split-by=timings)
+                    TEST=$(circleci tests glob "src/**/*.spec.ts" "src/**/*.test.ts" | circleci tests split --split-by=timings)
                     npm run test:coveralls $TEST
       - coveralls/upload:
           verbose: true
