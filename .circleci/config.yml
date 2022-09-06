@@ -16,6 +16,7 @@ jobs:
   build:
     docker:
       - image: cimg/node:14.17.6
+    parallelism: 4
     steps:
       - checkout
       - restore_cache:
@@ -32,6 +33,6 @@ jobs:
           command: npx eslint 'src/**'
       - run:
           name: tests and generates coverage report
-          command: npm run test:coveralls
+          command: npm run test:coveralls -v $(npm run test:coveralls | circleci tests split --split-by=timings)
       - coveralls/upload:
           verbose: true
