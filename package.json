@@ -19,6 +19,15 @@
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
     "prepare": "husky install"
   },
+  "jest": {
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
+  },
+  "jest-junit": {
+    "addFileAttribute": "true"
+  },
   "keywords": [],
   "author": "Lennon de Oliveira",
   "license": "GPL-3.0-or-later",
@@ -45,6 +54,7 @@
     "git-commit-msg-linter": "^4.0.7",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
+    "jest-junit": "^14.0.1",
     "lint-staged": "^12.1.7",
     "mockdate": "^3.0.5",
     "rimraf": "^3.0.2",
