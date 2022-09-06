@@ -1,0 +1,10 @@
+.DS_Store
+coverage
+junit.xml
+*.md
+!README*.md
+.git
+.cache
+**/*.spec.ts
+**/*.test.ts
+**/test/**
