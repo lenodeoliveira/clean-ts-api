@@ -1,5 +1,6 @@
 import { AddSurvey } from '@/domain/usecases/survey/add-survey'
 import { LoadSurveyById } from '@/domain/usecases/survey/load-survey-by-id'
+import { CheckSurveyById } from '@/domain/usecases/survey/check-survey-by-id'
 import { LoadSurveys } from '@/domain/usecases/survey/load-surveys'
 import { SurveyModel } from '@/domain/models/survey'
 import { mockSurveyModels, mockSurveyModel } from '@/domain/test'
@@ -30,4 +31,14 @@ export const mockLoadSurveyById = (): LoadSurveyById => {
   }
 
   return new LoadSurveyByIdStub()
+}
+
+export class CheckSurveyByIdSpy implements CheckSurveyById {
+  result = true
+  id: string
+
+  async checkById (id: string): Promise<CheckSurveyById.Result> {
+    this.id = id
+    return this.result
+  }
 }
