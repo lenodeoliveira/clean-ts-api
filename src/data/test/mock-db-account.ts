@@ -1,6 +1,7 @@
 import { AddAccountRepository } from '@/data/protocols/db/account/add-account-repository'
 import { UpdateAccessTokenRepository } from '@/data/protocols/db/account/updated-access-token-repository'
 import { LoadAccountByEmailRepository } from '@/data/protocols/db/account/load-account-by-email-repository'
+import { CheckAccountByEmailRepository } from '@/data/protocols/db/account/check-account-by-email-repository'
 import { LoadAccountByTokenRepository } from '@/data/protocols/db/account/load-account-by-token-repository'
 import { mockAccountModel } from '@/domain/test/'
 
@@ -27,6 +28,16 @@ export const mockLoadAccountByEmailRepository = (): LoadAccountByEmailRepository
   }
 
   return new LoadAccountByEmailRepositoryStub()
+}
+
+export class CheckAccountByEmailRepositorySpy implements CheckAccountByEmailRepository {
+  email: string
+  result = false
+
+  async checkByEmail (email: string): Promise<CheckAccountByEmailRepository.Result> {
+    this.email = email
+    return this.result
+  }
 }
 
 export const mockLoadAccountByTokenRepository = (): LoadAccountByTokenRepository => {
