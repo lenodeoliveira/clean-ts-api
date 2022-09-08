@@ -1,6 +1,6 @@
 
 import { DbCheckSurveyById } from './db-check-survey-by-id'
-import { throwError } from './db-load-survey-by-id-protocols'
+import { throwError } from './db-check-survey-by-id-protocols'
 import { CheckSurveyByIdsRepositorySpy } from '@/data/test'
 
 type SutTypes = {

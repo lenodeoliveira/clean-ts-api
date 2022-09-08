@@ -127,6 +127,37 @@ describe('Survey Mongo Repository', () => {
       expect(survey).toBeTruthy()
       expect(survey.id).toBeTruthy()
     })
+
+    test('Should return null if survey does not exists', async () => {
+      const sut = makeSut()
+      const survey = await sut.loadById('54495ad94c934721ede76d90')
+      expect(survey).toBeFalsy()
+    })
+  })
+
+  describe('loadAnswers()', () => {
+    test('Should load answers on success', async () => {
+      const { insertedId } = await surveyCollection.insertOne({
+        question: 'any_question',
+        answers: [
+          {
+            image: 'any_image',
+            answer: 'any_answer'
+          }
+        ],
+        date: new Date()
+      })
+      const sut = makeSut()
+      const id = insertedId.toHexString()
+      const answers = await sut.loadAnswers(id)
+      expect(answers).toEqual(['any_answer'])
+    })
+
+    test('Should return empty array if survey does not exists', async () => {
+      const sut = makeSut()
+      const answers = await sut.loadAnswers('54495ad94c934721ede76d90')
+      expect(answers).toEqual([])
+    })
   })
 
   describe('checkById()', () => {

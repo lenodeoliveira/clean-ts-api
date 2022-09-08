@@ -1,4 +1,4 @@
-import { LoadSurveyByIdsRepository } from '../../survey/load-survey-by-id/db-load-survey-by-id-protocols'
+import { LoadSurveyByIdsRepository } from '@/data/protocols/db/survey/load-survey-by-id-repository'
 import { SurveyResultModel, LoadSurveyResult, LoadSurveyResultRepository } from './db-load-survey-result-protocols'
 
 export class DbLoadSurveyResult implements LoadSurveyResult {

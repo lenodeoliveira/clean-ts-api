@@ -1,5 +1,5 @@
 
-import { CheckSurveyByIdsRepository, CheckSurveyById } from './db-load-survey-by-id-protocols'
+import { CheckSurveyByIdsRepository, CheckSurveyById } from './db-check-survey-by-id-protocols'
 
 export class DbCheckSurveyById implements CheckSurveyById {
   constructor (private readonly checkSurveyByIdRepository: CheckSurveyByIdsRepository) {}
