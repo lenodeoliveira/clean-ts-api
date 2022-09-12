@@ -1,5 +1,5 @@
-import { DateTimeResolver } from 'graphql-scalars'
+import { GraphQLDateTime } from 'graphql-scalars'
 
 export default {
-  DateTime: DateTimeResolver
+  DateTime: GraphQLDateTime
 }

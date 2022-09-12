@@ -1,6 +1,7 @@
 import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
-import { setupApp } from '@/main/config/app'
 import env from '@/main/config/env'
+import { setupApp } from '@/main/config/app'
+
 import { Collection } from 'mongodb'
 import { sign } from 'jsonwebtoken'
 import { Express } from 'express'
@@ -12,9 +13,9 @@ let app: Express
 
 const mockAccessToken = async (): Promise<string> => {
   const res = await accountCollection.insertOne({
-    name: 'John',
-    email: 'johndoe@gmail.com',
-    password: '12345',
+    name: 'Rodrigo',
+    email: 'rodrigo.manguinho@gmail.com',
+    password: '123',
     role: 'admin'
   })
   const id = res.insertedId.toHexString()
@@ -29,10 +30,10 @@ const mockAccessToken = async (): Promise<string> => {
   return accessToken
 }
 
-describe('Survey Result GraphQL', () => {
+describe('SurveyResult GraphQL', () => {
   beforeAll(async () => {
     app = await setupApp()
-    await MongoHelper.connect(process.env.MONGO_URL || 'mongodb://mongo:27017/clean-node-api')
+    await MongoHelper.connect(process.env.MONGO_URL)
   })
 
   afterAll(async () => {
@@ -40,9 +41,9 @@ describe('Survey Result GraphQL', () => {
   })
 
   beforeEach(async () => {
-    surveyCollection = await MongoHelper.getCollection('surveys')
+    surveyCollection = MongoHelper.getCollection('surveys')
     await surveyCollection.deleteMany({})
-    accountCollection = await MongoHelper.getCollection('accounts')
+    accountCollection = MongoHelper.getCollection('accounts')
     await accountCollection.deleteMany({})
   })
 

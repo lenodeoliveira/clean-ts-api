@@ -8,13 +8,13 @@ import { ObjectId } from 'mongodb'
 
 export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveysRepository, LoadSurveyByIdsRepository, CheckSurveyByIdsRepository, LoadAnswersBySurveyRepository {
   async add (surveyData: AddSurvey.Params): Promise<void> {
-    const surveyCollection = await MongoHelper.getCollection('surveys')
+    const surveyCollection = MongoHelper.getCollection('surveys')
     const { insertedId } = await surveyCollection.insertOne(surveyData)
     await surveyCollection.findOne(insertedId)
   }
 
   async loadAll (accountId: string): Promise<LoadSurveysRepository.Result> {
-    const surveysCollection = await MongoHelper.getCollection('surveys')
+    const surveysCollection = MongoHelper.getCollection('surveys')
 
     const query = new QueryBuilder()
       .lookup({
@@ -48,7 +48,7 @@ export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveysRe
   }
 
   async loadById (id: string): Promise<LoadSurveyByIdsRepository.Result> {
-    const surveysCollection = await MongoHelper.getCollection('surveys')
+    const surveysCollection = MongoHelper.getCollection('surveys')
     const survey = await surveysCollection.findOne({
       _id: new ObjectId(id)
     })
@@ -56,7 +56,7 @@ export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveysRe
   }
 
   async loadAnswers (id: string): Promise<LoadAnswersBySurveyRepository.Result> {
-    const surveysCollection = await MongoHelper.getCollection('surveys')
+    const surveysCollection = MongoHelper.getCollection('surveys')
     const query = new QueryBuilder()
       .match({
         _id: new ObjectId(id)
@@ -71,7 +71,7 @@ export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveysRe
   }
 
   async checkById (id: string): Promise<CheckSurveyByIdsRepository.Result> {
-    const surveysCollection = await MongoHelper.getCollection('surveys')
+    const surveysCollection = MongoHelper.getCollection('surveys')
     const survey = await surveysCollection.findOne({
       _id: new ObjectId(id)
     }, {
